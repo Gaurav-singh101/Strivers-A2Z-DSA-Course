@@ -1,3 +1,5 @@
+// Time complexity - O(log base 2 n)
+
 #include<bits/stdc++.h>
 using namespace std ; 
 
@@ -24,7 +26,7 @@ int main(){
 
     vector<int> arr = {2 , 3 , 5 , 6 , 6 , 8 , 27 , 55};
 
-    int target = 100 ;
+    int target = 5 ;
     cout <<"Index is : "<<lowerbound(arr , target);
 
     return 0 ; 
