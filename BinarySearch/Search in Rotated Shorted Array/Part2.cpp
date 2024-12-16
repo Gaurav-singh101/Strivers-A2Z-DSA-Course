@@ -1,3 +1,6 @@
+// Time complexity - O(log base 2 n) - Avg. Case
+// Time complexity - O(n / 2) - Worst Case
+
 #include<bits/stdc++.h>
 using namespace std ;
 
