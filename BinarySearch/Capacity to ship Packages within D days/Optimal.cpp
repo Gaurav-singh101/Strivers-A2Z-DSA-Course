@@ -35,7 +35,7 @@ int capacity(vector<int> wt , int days){
 
     while(low <= high){
         int mid = (low + high) / 2 ;
-        int NoOfDays = fun(wt , mid) ; 
+        int NoOfDays = fun(wt , mid) ;  
 
         if(NoOfDays <= days){
             ans = mid ; 
