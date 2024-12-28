@@ -10,7 +10,7 @@ long double miniMAXdis(vector<int> arr , int k){
         pq.push({arr[i + 1] - arr[i] , i});
     }
 
-    for(int gasStation = 1 ; gasStation <= k ; gasStation++){
+    for(int gasStation = 1 ;  gasStation <= k ; gasStation++){
         auto tp = pq.top() ; pq.pop();
         int secInd = tp.second;
         howMany[secInd]++;
