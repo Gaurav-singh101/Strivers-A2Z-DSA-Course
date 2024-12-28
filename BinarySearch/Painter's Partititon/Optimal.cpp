@@ -38,7 +38,7 @@ int painter(vector<int> arr , int k){
     }
     return low ;
 }
-
+ 
 
 int main(){
 
