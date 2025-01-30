@@ -23,7 +23,7 @@ int sorted(int arr[] , int m){
 }
 int main(){
     int n ;
-    cout<<"Etner array number : ";
+    cout<<"Enter array number : ";
     cin>>n ;
     int arr[n];
     cout<<endl<<"Enter Array Element : "<<endl ;
