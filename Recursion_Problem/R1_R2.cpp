@@ -1,23 +1,22 @@
 // //  Print from n to 1 
 
+
 // #include<bits/stdc++.h>
 // using namespace std ; 
 
-// void printnum(int x){
-
-//     if(x < 1) return ;
-//     cout << x << " , ";
-//     printnum(x - 1);
-// };
-
-// int main(){
-//     int a ; 
-//     cout<<"Enter a number : ";
-//     cin>>a;
-//     printnum(a);
-//     return 0 ;
+// void num(int n ){
+//     if(n == 0)return ;
+//     cout<<n<<" , ";
+//     return num(n - 1);
 // }
 
+// int main(){
+//     int n ; 
+//     cout<<"Enter nubmer : ";
+//     cin>>n;
+//     num(n);
+// return 0 ;
+// }
 
 
 ///////////////////////////////////////////////////////////
@@ -148,3 +147,6 @@
 
 //     return 0 ;
 // }
+
+
+
