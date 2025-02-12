@@ -31,46 +31,27 @@
 // }
 
 
-#include<iostream>
-using namespace std; 
-
-void fibo(int n) {
-    int a[n];
-    for (int i = 0; i < n; i++){
-       if  (i==0) {a[0] = 0 ;}; 
-       if (i ==1) {a[1] = 1 ;};
-        
-    }
-    
-    for (int i = 2; i < n; i++) {
-        a[i] = a[i - 1] + a[i - 2];
-    }
-
-}
-
-int main() {
-    fibo(5);
-    return 0;
-}
-
 
 ///////////////////////////////////////////////////
 
 
-// #include<iostream>
-// using namespace std ;
+#include<bits/stdc++.h>
+using namespace std ; 
 
-// int f(int n){
-//     if(n <= 1) return n ;
-//     int last = f(n-1);
-//     int s_last = f(n-2);
-//     return last + s_last ;
-// }
+int  fibo(int n){
+    if(n <= 1)return n;
 
-// int main(){
+    return fibo(n - 1) + fibo(n - 2);
 
-//     int n = 4 ; 
-//     cout << f(4) ;
+}
 
-//     return 0 ;
-// }
+int main(){
+
+    int n = 5 ; 
+
+    for(int i = 1 ; i <= n ; i++){
+        cout<<fibo(i)<<" , ";
+    }
+
+    return 0 ;
+}
