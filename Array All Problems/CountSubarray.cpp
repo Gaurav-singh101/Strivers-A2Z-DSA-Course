@@ -1,4 +1,5 @@
-////////////////  Better solution  ////////////////////
+////////////////  Better solution  ///////////////////
+// Time complexity O(n²)
 
 // #include<bits/stdc++.h>
 // using namespace std ;
@@ -33,6 +34,7 @@
 
 
 //////////////////   Optimal solution  ////////////////
+//Time complexity O (n)
 
 
 
