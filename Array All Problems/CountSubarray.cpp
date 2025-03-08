@@ -63,7 +63,7 @@ int main(){
 
     int k = 3 ; 
 
-    cout<<"The number of sun array is : "<<subarraySum(arr , k);
+    cout<<"The number of sub array is : "<<subarraySum(arr , k);
 
     return 0 ;
 }
