@@ -113,7 +113,7 @@
 
 
 
-/////////////  Ho  use Robber  (DP - Tabulation (Space Optimization ))//////////////
+/////////////  House Robber  (DP - Tabulation (Space Optimization ))//////////////
 
 
 
@@ -144,5 +144,5 @@ int main(){
 }
 
 
-// Time complexity - O(n)
-// Space Complexity - O(1)
+// // Time complexity - O(n)
+// // Space Complexity - O(1)
