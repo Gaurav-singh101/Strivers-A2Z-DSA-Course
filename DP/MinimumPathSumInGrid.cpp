@@ -81,22 +81,22 @@ using namespace std ;
 int MinPathSum(vector<vector<int>>& arr){
     int row = arr.size() ; 
     int col = arr[0].size() ;
-    vector<vector<int>>dp (row , vector<int>(col , 0)); 
 
+    vector<int> prev(col , 0);
     for(int i = 0 ; i < row ; i++){
+        vector<int> cur(col , 0);
         for(int j = 0 ; j < col ; j++){
-            if(i == 0 && j == 0) dp[i][j] = arr[i][j] ; 
+            if(i == 0 && j == 0) cur[j] = arr[i][j] ; 
             else{
-
-                    int up = (i > 0) ? arr[i][j] + dp[i - 1][j] : INT_MAX;
-
-                    int left = (j > 0) ? arr[i][j] + dp[i][j - 1] : INT_MAX;
-
-                dp[i][j] = min(up , left);
+                int up = (i > 0) ? arr[i][j] + prev[j] : INT_MAX ;
+                int left = (j > 0) ? arr[i][j] + cur[j - 1] : INT_MAX ;
+                
+                cur[j] = min(up , left); 
             }
         }
+        prev = cur ;
     }
-    return dp[row - 1][col - 1] ; 
+    return prev[col - 1];
 }
 
 int main(){
