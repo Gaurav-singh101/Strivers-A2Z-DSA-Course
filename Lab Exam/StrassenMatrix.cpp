@@ -16,7 +16,7 @@ vector<vector<int>> Multi(vector<vector<int>>& M1 , vector<vector<int>>& M2){
     int c3 = m2 + m4 ;
     int c4 = (m1 + m3) + (m6 - m2);
 
-    vector<vector<int>> c ;
+    vector<vector<int>> c(2, vector<int>(2));
 
     c[0][0] = c1 ; 
     c[0][1] = c2 ; 
@@ -29,13 +29,14 @@ vector<vector<int>> Multi(vector<vector<int>>& M1 , vector<vector<int>>& M2){
 
 int main(){
 
-    vector<vector<int>> Mat1(3);
-    vector<vector<int>> Mat2(3);
+    vector<vector<int>> Mat1(2, vector<int>(2));
+    vector<vector<int>> Mat2(2, vector<int>(2));
+    
 
     cout<<"Input First Matrix : "<<endl;
 
-    for(int i = 0 ; i < 3 ; i++){
-        for(int j = 0 ; j < 3 ; j++){
+    for(int i = 0 ; i < 2 ; i++){
+        for(int j = 0 ; j < 2 ; j++){
             cin>>Mat1[i][j];
         }
         cout<<endl ;
@@ -44,8 +45,8 @@ int main(){
     cout<<endl;
 
     cout<<"Input Second Matrix : "<<endl ;
-    for(int i = 0 ; i < 3 ; i++){
-        for(int j = 0 ; j < 3 ; j++){
+    for(int i = 0 ; i < 2 ; i++){
+        for(int j = 0 ; j < 2 ; j++){
             cin>>Mat2[i][j];
         }
         cout<<endl ;
@@ -53,8 +54,9 @@ int main(){
 
     vector<vector<int>> Result = Multi(Mat1 , Mat2);
 
-    for(int i = 0 ; i < 3 ; i++){
-        for(int j = 0 ; j < 3 ; j++){
+    cout<<"After Multiplication : "<<endl;
+    for(int i = 0 ; i < 2 ; i++){
+        for(int j = 0 ; j < 2 ; j++){
             cout<<Result[i][j]<<" ";
         }
         cout<<endl ;
