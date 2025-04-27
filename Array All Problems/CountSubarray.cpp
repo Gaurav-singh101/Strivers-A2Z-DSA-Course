@@ -39,8 +39,10 @@
 
 
 
-#include<bits/stdc++.h>
-using namespace std ;
+#include <iostream>
+#include <vector>
+#include <map>
+using namespace std;
 
     int subarraySum(vector<int>& nums, int k) {
         map<int , int> mpp;
