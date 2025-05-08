@@ -1,35 +1,35 @@
 // Time Complexity = N Ki power N ; 
 // Space Complexity = N 
 
-// #include<bits/stdc++.h>
-// using namespace std ; 
+#include<bits/stdc++.h>
+using namespace std ; 
 
-// int fun(vector<int> &arr , int ind , int jumps , int n){
-//     if(ind >= n - 1)return jumps ;
+int fun(vector<int> &arr , int ind , int jumps , int n){
+    if(ind >= n - 1)return jumps ;
 
-//     int mini = INT_MAX ; 
+    int mini = INT_MAX ; 
 
-//     for(int i = 1 ; i <= arr[ind] ; i++){
-//         mini = min(mini , fun(arr , ind + i , jumps + 1 , n));
-//     }
+    for(int i = 1 ; i <= arr[ind] ; i++){
+        mini = min(mini , fun(arr , ind + i , jumps + 1 , n));
+    }
 
-//     return mini ;
-// }
+    return mini ;
+}
 
 
-// int MiniJumps(vector<int> &arr){
-//     int n = arr.size();
-//     return fun(arr , 0 , 0 , n);
-// }
+int MiniJumps(vector<int> &arr){
+    int n = arr.size();
+    return fun(arr , 0 , 0 , n);
+}
 
-// int main(){
+int main(){
 
-//     vector<int> arr = {2 , 3 , 1 , 1 , 4};
+    vector<int> arr = {2 , 3 , 1 , 1 , 4};
 
-//     cout<<"Minimum Jumps : "<<MiniJumps(arr);
+    cout<<"Minimum Jumps : "<<MiniJumps(arr);
 
-//     return 0 ;
-// }
+    return 0 ;
+}
 
 
 //////////////// Unsing DP /////////////
@@ -69,8 +69,8 @@
 // }
 
 
-// Time Complexity = N Ki power 2 ; 
-// Space Complexity = N ki power 2 ;
+// // Time Complexity = N Ki power 2 ; 
+// // Space Complexity = N ki power 2 ;
 
 
 
