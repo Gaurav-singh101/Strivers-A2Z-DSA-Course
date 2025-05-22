@@ -3,7 +3,7 @@ using namespace std ;
 
 int fun(vector<int>& arr , int low , int high){
     int pivot = arr[low];
-    int i = low ; 
+    int i = low + 1 ; 
     int j = high ; 
 
     while(i < j){
@@ -35,7 +35,7 @@ void qs(vector<int>& arr , int low , int high){
 
 int main(){
 
-    vector<int> arr = { 2 , 5 , 19 , 8 , 0};
+    vector<int> arr = { 1 , 99 , 2 , 2 , 2 , 2 , 2  , 5 , 19 , 8 , 0};
     int n = arr.size();
 
     qs(arr , 0 , n - 1);
