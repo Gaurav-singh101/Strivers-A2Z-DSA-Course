@@ -1,4 +1,4 @@
-// Store  Undirected  graph in adj. matrix 
+// Weighted Graph 
 
 #include<bits/stdc++.h>
 using namespace std ; 
@@ -23,11 +23,13 @@ int main(){
 
 
     for(int i = 0 ; i < m ; i++){
-        int u , v ; 
+        int u , v , EW; 
         cout<<"Entersection point for graph : ";
         cin>>u>>v ;
-        graph[u][v] = 1 ; 
-        graph[v][u] = 1 ;
+        cout<<"Enter edge weight : ";
+        cin>>EW ;
+        graph[u][v] = EW ; 
+        graph[v][u] = EW ;
     }
 
     // Print graph 
