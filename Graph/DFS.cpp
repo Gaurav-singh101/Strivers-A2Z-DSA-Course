@@ -1,25 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-class Solution {
-private:
-    void dfs(int startNode, vector<int> adj[], vector<int>& vis, vector<int>& ls) {
-        vis[startNode] = 1;
-        ls.push_back(startNode);
+class Solution{
+    private :
+    void dfs(int startingpoint , vector<int> adj[] , vector<int> &vis , vector<int> &result){
+        result.push_back(startingpoint);
+        vis[startingpoint] = 1 ;
 
-        for (auto it : adj[startNode]) {
-            if (!vis[it]) {
-                dfs(it, adj, vis, ls);
+        for(auto it : adj[startingpoint]){
+            if(!vis[it]){
+                dfs(it , adj , vis , result);
             }
         }
     }
 
-public:
-    vector<int> DFSOfGraph(int v, vector<int> adj[], int startNode) {
-        vector<int> vis(v + 1, 0);  
-        vector<int> ls;
-        dfs(startNode, adj, vis, ls);
-        return ls;
+    public :
+
+    vector<int> dfs(int v , int startingpoint , vector<int> adj[]){
+        vector<int> result ; 
+        vector<int> vis(v + 1 , 0);
+        dfs(startingpoint , adj , vis , result);
+        return result ;
     }
 };
 
@@ -50,7 +51,7 @@ int main() {
     }
 
     Solution obj;
-    vector<int> ans = obj.DFSOfGraph(n, adj, 3);  
+    vector<int> ans = obj.dfs(n, 3 , adj);  
 
     cout << "DFS traversal: ";
     for (auto it : ans) {
