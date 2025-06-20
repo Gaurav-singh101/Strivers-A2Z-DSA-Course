@@ -36,8 +36,8 @@ vector<int> PreOrder(Node *RootNode){
         st.pop();
         Res.push_back(node -> data);
 
-        if(node -> left != NULL){st.push(node -> left);}
         if(node -> right != NULL){st.push(node -> right);}
+        if(node -> left != NULL){st.push(node -> left);}
     }
     return Res ;
 }
