@@ -15,23 +15,58 @@
 #include<bits/stdc++.h>
 using namespace std ;
 
-class solutuon {
-    private: 
+class solution{
+    public: 
 
-    int  DP_14(vector<int> arr , int target , int ind){
-        if(ind == 0){
-            return arr[ind] = target ;
+    int miniSubsetSumDiff(vector<int> &arr , int n){
+        int totalsum = 0 ; 
+        for(int i = 0 ; i < n ; i++){
+            totalsum += arr[i];
+        }
+        int k = totalsum ;
+        
+        vector<vector<bool>> dp(n , vector<bool>(k + 1 , 0));
+        for(int i = 0 ; i < n ; i++){
+            dp[i][0] = true ;
+        }
+        if(arr[0] <= k) dp[0][arr[0]] = true ;
+
+        for(int i = 1 ; i < n ; i++){
+            for(int j = 1 ; j <= k ; j++){
+                bool Ntake = dp[i - 1][j];
+                bool take = false ; 
+                if(arr[i] <= j){
+                    take = dp[i - 1][j - arr[i]];
+                }
+                dp[i][j] = take | Ntake ;
+            }
         }
 
-        int NotTake = DP_14(arr , target , ind - 1);
-        int Take = false ; 
-        if(arr[ind] < target){
-            Take = DP_14(arr , target - arr[ind] , ind - 1);
-        }
 
-        return NotTake || Take ;
+        // dp[n - 1][col -> 0 to totalsum]
+
+        int mini = 1e9 ;
+
+        for(int s1 = 0 ; s1 <= totalsum / 2 ; s1++){
+            if(dp[n-1][s1] == true){
+                mini = min(mini , abs(s1 - (totalsum - s1)));
+            }
+        }
+        return mini ;
     }
 };
+
+int main(){
+
+    vector<int> arr = {3,9,7,3};
+    int n = arr.size();
+
+    solution obj ;
+
+    cout<<"Result : "<<obj.miniSubsetSumDiff(arr , n);
+
+    return 0 ;
+}
 
 
 
