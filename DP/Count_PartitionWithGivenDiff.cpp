@@ -43,7 +43,7 @@ public:
 
     int Partition(vector<int>& arr, int diff) {
         int totalsum = accumulate(arr.begin(), arr.end(), 0);
-        if ((totalsum - diff) % 2 != 0 || totalsum < diff) return 0;
+        if ((totalsum - diff) % 2 != 0 || totalsum < diff) return 0;  // has to bs even 
 
         int s2 = (totalsum - diff) / 2;
         return subsets(arr, s2);
@@ -55,7 +55,7 @@ int main() {
     int diff = 1;
 
     Solution obj;
-    cout << "Result : " << obj.Partition(arr, diff) << endl;
+    cout << "Partition with given Difference : " << obj.Partition(arr, diff) << endl;
 
     return 0;
 }
