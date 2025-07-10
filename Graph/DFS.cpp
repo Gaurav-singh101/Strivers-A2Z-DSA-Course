@@ -2,26 +2,26 @@
 using namespace std;
 
 class Solution{
-    private :
-    void dfs(int startingpoint , vector<int> adj[] , vector<int> &vis , vector<int> &result){
-        result.push_back(startingpoint);
-        vis[startingpoint] = 1 ;
+    private: 
+    void helper(int n , int ST , vector<int>adj[] , vector<int>& vis , vector<int>& result){
+        result.push_back(ST);
+        vis[ST] = 1 ; 
 
-        for(auto it : adj[startingpoint]){
+        for(auto it : adj[ST]){
             if(!vis[it]){
-                dfs(it , adj , vis , result);
+                helper(n , it , adj , vis , result);
             }
         }
     }
 
-    public :
-
-    vector<int> dfs(int v , int startingpoint , vector<int> adj[]){
-        vector<int> result ; 
-        vector<int> vis(v + 1 , 0);
-        dfs(startingpoint , adj , vis , result);
+    public: 
+    vector<int>dfs(int n , int ST , vector<int>adj[]){
+        vector<int> result ;
+        vector<int> vis(n + 1 , 0);
+        helper(n , ST , adj , vis , result);
         return result ;
     }
+
 };
 
 int main() {

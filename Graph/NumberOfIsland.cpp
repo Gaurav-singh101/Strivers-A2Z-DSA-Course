@@ -29,7 +29,6 @@ private:
         queue<pair<int, int>> q;
         q.push({row, col});
 
-        // Use only 4 directions (up, right, down, left)
         int drow[] = {-1, 0, 1, 0};
         int dcol[] = {0, 1, 0, -1};
 
