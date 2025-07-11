@@ -13,3 +13,54 @@
     // Output: false
 
 
+
+
+#include<bits/stdc++.h>
+using namespace std ; 
+
+class Solution {
+private: 
+    bool detect(int node, int parent , vector<int>& vis, vector<int>adj[]) {
+        vis[node] = 1 ; 
+        for(auto it : adj[node]){
+            if(!vis[it]){
+                if(detect(it , node , vis , adj) == true){
+                    return true ;
+                }
+            }else if(it != parent)return true ;
+        }
+        return false ;
+    }
+
+public:
+    bool isCycle(int V, vector<vector<int>>& edges) {
+        vector<int> vis(V, 0);
+        vector<int> adj[V];  
+
+        for (int i = 0; i < edges.size(); i++) {
+            int u = edges[i][0];
+            int v = edges[i][1];
+            adj[u].push_back(v);
+            adj[v].push_back(u); 
+        }
+
+        for (int i = 0; i < V; i++) {
+            if (!vis[i]) {
+                if (detect(i, -1 , vis, adj) == true) return true;
+            }
+        }
+        return false;
+    }
+};
+
+int main(){
+
+    int V = 4 ; 
+    vector<vector<int>> edges = {{0, 1}, {1, 2}, {2, 3}};
+
+    Solution obj ;
+
+    cout<<"Cycle is found or not : "<<obj.isCycle(V , edges);
+
+    return 0 ;
+}
