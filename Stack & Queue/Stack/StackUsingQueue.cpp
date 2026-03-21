@@ -14,6 +14,7 @@ class Stack {
       }
     }
 
+
   int Pop() {
     int n = q.front();
     q.pop();

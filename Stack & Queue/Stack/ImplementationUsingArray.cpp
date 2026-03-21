@@ -42,5 +42,3 @@ int main() {
   cout << "Top of stack after deleting an element " << s.Top() << endl;
   return 0;
 }
-
-
