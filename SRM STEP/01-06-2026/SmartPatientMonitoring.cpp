@@ -138,3 +138,91 @@
 
 
 /////////////////////  Level - 3  /////////////////
+
+
+#include<bits/stdc++.h>
+using namespace std;
+
+struct Patient{
+    string name;
+    int heartRate;
+    int bloodPressure;
+    int temperature;
+};
+
+int main(){
+
+    int n;
+    cout << "Enter number of patients: ";
+    cin >> n;
+
+    vector<Patient> patients;
+
+    for(int i = 0; i < n; i++){
+
+        Patient p;
+
+        cout << "\nPatient " << i + 1 << "\n";
+
+        cout << "Name: ";
+        cin >> p.name;
+
+        cout << "Heart Rate: ";
+        cin >> p.heartRate;
+
+        cout << "Blood Pressure: ";
+        cin >> p.bloodPressure;
+
+        cout << "Temperature: ";
+        cin >> p.temperature;
+
+        patients.push_back(p);
+    }
+
+    // -------------------------
+    // Imperative Approach
+    // -------------------------
+
+    vector<Patient> criticalImperative;
+
+    for(auto &p : patients){
+        if(p.heartRate > 120){
+            criticalImperative.push_back(p);
+        }
+    }
+
+    // -------------------------
+    // Declarative Approach
+    // -------------------------
+
+    vector<Patient> criticalDeclarative;
+
+    copy_if(
+        patients.begin(),
+        patients.end(),
+        back_inserter(criticalDeclarative),
+        [](const Patient& p){
+            return p.heartRate > 120;
+        }
+    );
+
+    cout << "\n=== Critical Patients (Imperative) ===\n";
+
+    for(auto &p : criticalImperative){
+        cout << p.name
+             << " HR: "
+             << p.heartRate
+             << '\n';
+    }
+
+    cout << "\n=== Critical Patients (Declarative) ===\n";
+
+    for(auto &p : criticalDeclarative){
+        cout << p.name
+             << " HR: "
+             << p.heartRate
+             << '\n';
+    }
+
+    return 0;
+}
